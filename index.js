@@ -1,24 +1,31 @@
-// Counter
-let buttonDecrease = document.getElementById("btn-decrease");
-let buttonReset = document.getElementById("btn-reset");
-let buttonIncrease = document.getElementById("btn-increase");
+//https://www.youtube.com/watch?v=8dWL3wF_OMw&t=14856s&ab_channel=BroCode
 
-let counterValue = document.getElementById("counterValue");
-let counter = 0;
+/*
+document.getElementById('p1').innerHTML = 'Hello p1'
+document.getElementById('p2').innerHTML = 'Hello p2'
+document.getElementById('p3').innerHTML = 'Hello p3'
+*/
 
-buttonDecrease.addEventListener("click", function clickFunction() {
-  counter = counter - 1;
-  counterValue.innerHTML = counter;
-});
-buttonReset.addEventListener("click", function clickFunction() {
-  counter = 0;
-  counterValue.innerHTML = counter;
-  console.log("res");
-});
-buttonIncrease.addEventListener("click", function clickFunction() {
-  counter = counter + 1;
-  counterValue.innerHTML = counter;
-  console.log("inc");
-});
+// Window promt
 
-// just this change
+// let username = window.prompt('Hello how are you?')
+// console.log(username)
+
+
+// let username;
+
+// document.getElementById('myButton').onclick = function() {
+//   username = document.getElementById('myText').value;
+//   console.log(username)
+
+// }
+
+// TYPE CONVERTION
+
+let age = window.prompt('how old are you')
+
+console.log(typeof age)
+age = Number(age)
+age += 1;
+console.log(typeof age)
+console.log('HP', age, "years")
