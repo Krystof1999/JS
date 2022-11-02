@@ -20,3 +20,5 @@ buttonIncrease.addEventListener("click", function clickFunction() {
   counterValue.innerHTML = counter;
   console.log("inc");
 });
+
+// just this change
