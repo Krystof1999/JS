@@ -37,14 +37,14 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 
 // CHECKBOX PROPERTY
 
-{
-  /* <label for="visa">Visa</label>
-<input type="radio" name="card" id="visa" />
-<label for="masterCard">masterCard</label>
-<input type="radio" name="card" id="masterCard" />
-<label for="applePay">applePay</label>
-<input type="radio" name="card" id="applePay" /> */
-}
+// {
+//   /* <label for="visa">Visa</label>
+// <input type="radio" name="card" id="visa" />
+// <label for="masterCard">masterCard</label>
+// <input type="radio" name="card" id="masterCard" />
+// <label for="applePay">applePay</label>
+// <input type="radio" name="card" id="applePay" /> */
+// }
 
 // const visa = document.getElementById("visa");
 // const masterCard = document.getElementById("masterCard");
@@ -63,4 +63,85 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   }
 // };
 
-// CONTINUE 1:23
+// NUMBER GUESSING GAME
+
+// const submitButton = document.getElementById('submitButton')
+
+
+ 
+// // do{
+// //     const guessNumber =1;
+// //     const answer = 1;
+// // // something
+// // // guess number - enter number and press button
+// // // do it again and again until the number is = to answer
+// // console.log('delam')
+// let counter = 0;
+// submitButton.onclick = function() {
+//     counter +=1;// not working
+
+//     let textField = document.getElementById('input')
+//     const answer = Math.floor(Math.random() * 5) + 1;
+    
+
+//     console.log(answer)
+//     console.log(textField.value)
+
+//     if(answer != textField.value){
+//         console.log('Try again')
+//         textField.value = "";
+//         // counter +=1;
+//     }
+//     else{
+//         // counter +=1;
+//         alert(`Congratulation, you are the winner. It took you ${counter} attempts`)
+//     }
+   
+    
+// // }while(guessNumber === answer)
+// }
+
+// TEMPERATURE CONVERTION
+function toCelsius(temperature){
+return (temperature - 32) * (5/9)
+}
+
+function toFahrenheit(temperature){
+return temperature * 9 / 5 + 32
+}
+
+let temperature = document.getElementById('textBox')
+
+const submitBtn = document.getElementById('submitButton')
+
+const toCesiusRadio = document.getElementById('cButton')
+
+const toFahrenheitRadio = document.getElementById('fButton')
+
+submitBtn.onclick = function() {
+ temperature = temperature.value
+
+ if(toCesiusRadio.checked){
+    temperature = toCelsius(temperature)
+    console.log(temperature)
+ }
+ else if(toFahrenheitRadio.checked){
+    temperature = toFahrenheit(temperature)
+    console.log(temperature)
+ }
+ else{
+    alert('Please choose one of the options.')
+ }
+
+
+}
+
+
+
+
+
+
+
+
+
+

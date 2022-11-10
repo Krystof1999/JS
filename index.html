@@ -8,7 +8,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="btn">Submit</button>
+    <label>Enter a temperature</label>
+    <input type="text" id="textBox" /><br />
+
+    <label>convert to:</label><br />
+    <input type="radio" id="cButton" name="unit" />
+    <label>Celsius</label>
+    <input type="radio" id="fButton" name="unit" />
+    <label>Fahrenheit</label>
+
+    <button type="button" id="submitButton">Submit</button>
+    <label id="temperatureLabel"></label>
+
     <script src="index.js"></script>
   </body>
 </html>
