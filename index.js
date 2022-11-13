@@ -37,14 +37,14 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 
 // CHECKBOX PROPERTY
 
-{
-  /* <label for="visa">Visa</label>
-<input type="radio" name="card" id="visa" />
-<label for="masterCard">masterCard</label>
-<input type="radio" name="card" id="masterCard" />
-<label for="applePay">applePay</label>
-<input type="radio" name="card" id="applePay" /> */
-}
+// {
+//   /* <label for="visa">Visa</label>
+// <input type="radio" name="card" id="visa" />
+// <label for="masterCard">masterCard</label>
+// <input type="radio" name="card" id="masterCard" />
+// <label for="applePay">applePay</label>
+// <input type="radio" name="card" id="applePay" /> */
+// }
 
 // const visa = document.getElementById("visa");
 // const masterCard = document.getElementById("masterCard");
@@ -63,4 +63,38 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   }
 // };
 
-// CONTINUE 1:23
+// FUNCTION
+
+// let userName = "Peter";
+// let age = 21;
+
+// happyBirthday();
+// happyBirthday();
+
+// function happyBirthday() {
+//   console.log("name" + userName + "age" + age);
+// }
+
+// TERNARY OPERATOR
+// condition ? exprIfTrue : exprIfFalse
+
+// let adult = checkAge(23);
+// console.log(adult);
+
+// function checkAge(age) {
+//   // if (age >= 21) {
+//   //   return true;
+//   // } else {
+//   //   return false;
+//   // }
+//   // return age >= 21 ? true : false;
+// }
+
+// TEMPLATE LITERALS
+
+let userName = "Bro";
+let items = 3;
+let total = 75;
+
+console.log("hello", userName);
+console.log(`Hello ${userName}`);
