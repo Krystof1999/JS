@@ -322,4 +322,201 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   }
 // }
 
-// continue 48
+// MAP
+
+// const store = new Map([
+//   ["t-shirt", 20],
+//   ["jeans", 30],
+//   ["jacket", 10],
+// ]);
+
+// store.get("t-shirt");
+// store.set("socks", 40);
+// store.delete("socks");
+// console.log(store.has("socks"));
+// store.forEach((value, key) => console.log(`${key} ${value}`));
+
+// OBJECT
+
+// const car = {
+//   model: "Mustang",
+//   color: "red",
+//   year: 2023,
+
+//   drive: function () {
+//     console.log("You drive the car");
+//   },
+//   breake: function () {
+//     console.log("You are braking");
+//   },
+// };
+
+// console.log(car.log);
+// console.log(car.color);
+// console.log(car.year);
+
+// car.drive();
+// car.breake();
+
+// THIS
+
+// const car1 = {
+//   model: "Mustang",
+//   color: "red",
+//   year: 2023,
+
+//   drive: function () {
+//     console.log(`You drive the ${this.model}`);
+//   },
+// };
+
+// const car2 = {
+//   model: "Corvett",
+//   color: "red",
+//   year: 2023,
+
+//   drive: function () {
+//     console.log(`You drive the ${this.model}`);
+//   },
+// };
+
+// car1.drive();
+// car2.drive();
+
+// CLASS
+
+// class Player {
+//   score = 0;
+
+//   pause() {
+//     console.log("You paused the game");
+//   }
+
+//   exit() {
+//     console.log("You exited the game");
+//   }
+// }
+
+// const player = new Player();
+
+// console.log(player.score);
+
+// player.pause();
+
+// CONSTRUCTOR
+
+// class Student {
+//   constructor(name, age, gpa) {
+//     this.name = name;
+//     this.age = age;
+//     this.gpa = gpa;
+//   }
+//   study() {
+//     console.log(`${this.name} is studying`);
+//   }
+// }
+
+// const student = new Student("Petr", 32, 3.2);
+// const student2 = new Student("Adam", 12, 31.2);
+// console.log(student.name);
+// student.study();
+
+// STATIC
+// patri ke classe ne k objektu.
+// nemusim vytvaret new Object(), ale rovnou static funkci zavolam
+
+// class Car {
+//   static numberOfCars = 0;
+//   constructor(model) {
+//     this.model = model;
+//     Car.numberOfCars += 1;
+//   }
+
+//   static startRace() {
+//     console.log("You have started");
+//   }
+// }
+
+// const car1 = new Car("Mustang");
+// const car2 = new Car("BMW");
+// const car3 = new Car("Audi");
+// const car4 = new Car("Audi");
+
+// console.log(Car.numberOfCars);
+
+// Car.startRace();
+
+// INHERITANCE
+
+// class Animal {
+//   alive = true;
+//   eat() {
+//     console.log(`This${this.name} is eating`);
+//   }
+//   sleep() {
+//     console.log(`This${this.name} is sleaping`);
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   name = "rabbit";
+
+//   run() {
+//     console.log(`This${this.name} is running`);
+//   }
+// }
+// class Fish extends Animal {
+//   name = "fish";
+
+//   swim() {
+//     console.log(`This${this.name} is swimming`);
+//   }
+// }
+// class Hawk extends Animal {
+//   name = "fish";
+
+//   fly() {
+//     console.log(`This${this.name} is flying`);
+//   }
+// }
+
+// const rabbit = new Rabbit();
+// const fish = new Fish();
+// const hawk = new Hawk();
+
+// console.log(rabbit.alive);
+// rabbit.eat();
+// fish.sleep();
+// fish.run(); // fish does not have run function -> this will not work
+
+// SUPER
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, age, runSpeed) {
+    super(name, age);
+    this.runSpeed = runSpeed;
+  }
+}
+class Fish extends Animal {
+  constructor(name, age, swimSpeed) {
+    super(name, age);
+    this.swimSpeed = swimSpeed;
+  }
+}
+class Hawk extends Animal {
+  constructor(name, age, flySpeed) {
+    super(name, age);
+    this.flySpeed = flySpeed;
+  }
+}
+
+const rabbit = new Rabbit("rabbit", 1, 40);
+const fish = new Fish("fish", 2, 80);
+const hawk = new Hawk("hawk", 3, 400);
