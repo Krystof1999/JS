@@ -639,4 +639,46 @@ console.log(cards2[0].value + cards2[0].suit);
 
 cards2.forEach((card) => console.log(card.value + card.suit));
 
-// continue 60
+// ERROR HANDELING
+
+// try {
+//   let x = window.prompt("enter a number");
+//   x = Number(x);
+
+//   if (isNaN(x)) throw "That was not a number";
+//   if (x == "") throw "That was empty";
+
+//   console.log(`${x} is a number`);
+// } catch (error) {
+//   console.log(error);
+// }
+
+// finally{
+//   console.log("This always executes")
+// }
+
+// SET TIMEOUT
+
+// let item = "cryptocurrency";
+// let price = 420;
+
+// let timer1 = setTimeout(firstMessage, 4000, item, price);
+// let timer2 = setTimeout(secondMessage, 4000);
+// let timer3 = setTimeout(thirdMessage, 4000);
+
+// function firstMessage(item, price) {
+//   alert(`first${item} ${price}`);
+// }
+// function secondMessage() {
+//   alert("second");
+// }
+// function thirdMessage() {
+//   alert("third");
+// }
+
+// document.getElementById("submitButton").onclick = function () {
+//   clearTimeout(timer1, timer2, timer3);
+//   alert("you have bought the course");
+// };
+
+// CONTINUE 62 SET TIMEOUT
