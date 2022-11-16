@@ -491,32 +491,152 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 
 // SUPER
 
-class Animal {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   constructor(name, age, runSpeed) {
+//     super(name, age);
+//     this.runSpeed = runSpeed;
+//   }
+// }
+// class Fish extends Animal {
+//   constructor(name, age, swimSpeed) {
+//     super(name, age);
+//     this.swimSpeed = swimSpeed;
+//   }
+// }
+// class Hawk extends Animal {
+//   constructor(name, age, flySpeed) {
+//     super(name, age);
+//     this.flySpeed = flySpeed;
+//   }
+// }
+
+// const rabbit = new Rabbit("rabbit", 1, 40);
+// const fish = new Fish("fish", 2, 80);
+// const hawk = new Hawk("hawk", 3, 400);
+
+// GET, SET
+
+// class Car {
+//   constructor(power) {
+//     this._gas = 25;
+//     this._power = power;
+//   }
+//   get power() {
+//     return this._power;
+//   }
+//   get gas() {
+//     return this._gas;
+//   }
+//   set gas(value) {
+//     if (value > 50) {
+//       value = 50;
+//     }
+//     this._gas = value;
+//   }
+// }
+
+// let car = new Car(400);
+
+// console.log(car.power);
+// console.log(car.gas);
+
+// Object as argumetn
+
+// class Car {
+//   constructor(model, year, color) {
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+//   }
+// }
+
+// const car1 = new Car("Skoda", 2020, "white");
+// const car2 = new Car("vw", 2008, "blue");
+
+// changeColor(car1, "red");
+// displayCar(car1);
+
+// function changeColor(car, color) {
+//   car.color = color;
+// }
+
+// function displayCar(car) {
+//   console.log(car);
+// }
+
+// ARRAY OF OBJECTS
+
+// class Car {
+//   constructor(model, year, color) {
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+//   }
+// }
+
+// const car1 = new Car("Skoda", 2020, "white");
+// const car2 = new Car("vw", 2008, "blue");
+// const car3 = new Car("vw", 2008, "blue");
+// const car4 = new Car("vw", 2008, "blue");
+
+// const cars = [car1, car2, car3, car4];
+
+// // writeArray(cars);
+// writeArray2(cars);
+
+// function writeArray(cars) {
+//   cars.forEach((car) => {
+//     console.log(car);
+//   });
+// }
+
+// function writeArray2(cars) {
+//   for (let car of cars) {
+//     console.log(car);
+//   }
+// }
+
+// ANONYMOUS OBJECT
+
+class Card {
+  constructor(value, suit) {
+    this.value = value;
+    this.suit = suit;
   }
 }
 
-class Rabbit extends Animal {
-  constructor(name, age, runSpeed) {
-    super(name, age);
-    this.runSpeed = runSpeed;
-  }
-}
-class Fish extends Animal {
-  constructor(name, age, swimSpeed) {
-    super(name, age);
-    this.swimSpeed = swimSpeed;
-  }
-}
-class Hawk extends Animal {
-  constructor(name, age, flySpeed) {
-    super(name, age);
-    this.flySpeed = flySpeed;
-  }
-}
+// normal way
+let card1 = new Card("A", "Hearts");
+let card2 = new Card("A", "Spades");
+let card3 = new Card("A", "Clubs");
+let card4 = new Card("A", "Clubs");
+let card5 = new Card("A", "Clubs");
 
-const rabbit = new Rabbit("rabbit", 1, 40);
-const fish = new Fish("fish", 2, 80);
-const hawk = new Hawk("hawk", 3, 400);
+let cards = [card1, card2, card3, card4, card5];
+
+console.log(card1.value + card1.suit);
+console.log(cards[0].value + cards[0].suit);
+
+// anonymous way
+
+let cards2 = [
+  new Card("A", "Hearts"),
+  new Card("A", "Spades"),
+  new Card("A", "Clubs"),
+  new Card("A", "Clubs"),
+];
+
+console.log(cards2[0].value + cards2[0].suit);
+
+// for each method to write the array (not connected to anonymoous)
+
+cards2.forEach((card) => console.log(card.value + card.suit));
+
+// continue 60
