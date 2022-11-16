@@ -681,4 +681,20 @@ cards2.forEach((card) => console.log(card.value + card.suit));
 //   alert("you have bought the course");
 // };
 
-// CONTINUE 62 SET TIMEOUT
+// SET INTERVAL
+
+// let count = 0;
+// let max = window.prompt("enter number");
+// max = Number(max);
+
+// const myTimer = setInterval(countUp, 1000);
+
+// function countUp() {
+//   count += 1;
+//   console.log(count);
+//   if (count >= max) {
+//     clearInterval(myTimer);
+//   }
+// }
+
+// DATE OBJECT - CONTINUE
