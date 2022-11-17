@@ -1,0 +1,88 @@
+html {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+h1 {
+  margin-top: 0;
+  font-family: monospace;
+}
+h2 {
+  font-family: monospace;
+  text-align: center;
+}
+/*Price*/
+#priceDiv {
+  border: 1px solid darkgrey;
+  border-radius: 6px;
+  background-color: lightgray;
+}
+#priceSpan {
+  border-right: 0.5px solid darkgrey;
+  padding: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+#priceInput {
+  border: none;
+  border-end-end-radius: 6px;
+  border-start-end-radius: 6px;
+  padding: 12px;
+  margin-left: -4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+}
+
+/*tipInputDiv*/
+#tipInputDiv {
+  margin-top: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+}
+#tipInputDiv {
+  font-family: monospace;
+  font-size: 17px;
+}
+#tipOutput {
+  border: 1px solid darkgrey;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-left: none;
+  border-end-end-radius: 6px;
+  border-start-end-radius: 6px;
+  background-color: lightgray;
+}
+/*Tip amouth*/
+#div1 {
+  margin-bottom: 10px;
+}
+#div2 {
+  margin-top: 25px;
+}
+#tipLabel {
+  border: 1px solid darkgrey;
+  background-color: lightgray;
+  padding: 10px;
+  padding-right: 130px;
+  border-radius: 6px;
+  /* margin: 5px; */
+}
+#priceLabel {
+  border: 1px solid darkgrey;
+  background-color: lightgray;
+  padding: 10px;
+  padding: 10px;
+  padding-right: 143px;
+  border-radius: 6px;
+}
+/*All*/
+#tipCalculator {
+  border: 1px solid black;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

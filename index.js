@@ -605,39 +605,39 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 
 // ANONYMOUS OBJECT
 
-class Card {
-  constructor(value, suit) {
-    this.value = value;
-    this.suit = suit;
-  }
-}
+// class Card {
+//   constructor(value, suit) {
+//     this.value = value;
+//     this.suit = suit;
+//   }
+// }
 
-// normal way
-let card1 = new Card("A", "Hearts");
-let card2 = new Card("A", "Spades");
-let card3 = new Card("A", "Clubs");
-let card4 = new Card("A", "Clubs");
-let card5 = new Card("A", "Clubs");
+// // normal way
+// let card1 = new Card("A", "Hearts");
+// let card2 = new Card("A", "Spades");
+// let card3 = new Card("A", "Clubs");
+// let card4 = new Card("A", "Clubs");
+// let card5 = new Card("A", "Clubs");
 
-let cards = [card1, card2, card3, card4, card5];
+// let cards = [card1, card2, card3, card4, card5];
 
-console.log(card1.value + card1.suit);
-console.log(cards[0].value + cards[0].suit);
+// console.log(card1.value + card1.suit);
+// console.log(cards[0].value + cards[0].suit);
 
-// anonymous way
+// // anonymous way
 
-let cards2 = [
-  new Card("A", "Hearts"),
-  new Card("A", "Spades"),
-  new Card("A", "Clubs"),
-  new Card("A", "Clubs"),
-];
+// let cards2 = [
+//   new Card("A", "Hearts"),
+//   new Card("A", "Spades"),
+//   new Card("A", "Clubs"),
+//   new Card("A", "Clubs"),
+// ];
 
-console.log(cards2[0].value + cards2[0].suit);
+// console.log(cards2[0].value + cards2[0].suit);
 
-// for each method to write the array (not connected to anonymoous)
+// // for each method to write the array (not connected to anonymoous)
 
-cards2.forEach((card) => console.log(card.value + card.suit));
+// cards2.forEach((card) => console.log(card.value + card.suit));
 
 // ERROR HANDELING
 
@@ -698,3 +698,62 @@ cards2.forEach((card) => console.log(card.value + card.suit));
 // }
 
 // DATE OBJECT - CONTINUE
+// let date = new Date();
+// // let date = new Date(2023, 8, 12, 2, 34, 43, 5);
+
+// // let year = date.getFullYear();
+// // let dayOfMonth = date.getDate();
+// // let dayOfWeek = date.getDay();
+// // let month;
+// // let hour;
+// // let minutes;
+// // let seconds;
+// // let miliseconds;
+
+// // date = date.toLocaleString();
+// // console.log(date);
+
+// function formatDate(date) {
+//   let year = date.getFullYear();
+//   let month = date.getMonth() + 1;
+//   let day = date.getDate();
+//   //   console.log(`${month}/${day}/${year}`);
+//   return `${month}/${day}/${year}`;
+// }
+// // formatDate(date);
+
+// function formatTime(date) {
+//   let hours = date.getHours();
+//   let minutes = date.getMinutes();
+//   let seconds = date.getSeconds();
+//   let amOrPm = hours >= 12 ? "pm" : "am";
+
+//   hours = hours % 12 || 12;
+
+//   console.log(`${hours}:${minutes}:${seconds} ${amOrPm}`);
+//   return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+// }
+
+// formatTime(date);
+
+// // CLOCK PROGRAM
+
+// const label = document.getElementById("clockLabel");
+
+// update();
+// setInterval(update, 1000);
+
+// function update() {
+//   const date = new Date();
+//   label.innerHTML = formatTime(date);
+
+//   function formatTime(date) {
+//     hours = date.getHours();
+//     minutes = date.getMinutes();
+//     seconds = date.getSeconds();
+
+//     return `${hours}:${minutes}:${seconds}`;
+//   }
+// }
+
+//
