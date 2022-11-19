@@ -756,4 +756,81 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   }
 // }
 
-//
+// CONSOLE TIME
+
+// // start
+// console.time("response time")
+
+// // something
+// setTimeout(() => console.log('hello', 3000))
+
+// //end
+// console.timeEnd('response time')
+
+// PROMISE
+
+// Object that encapsulated the result of an asynchronous operation
+// let asynchronous methods return values like synchronous methods
+// "I promise to return something in the future"
+
+// the STATE is 'pending' then: 'fulfilled' or 'rejected'
+// the RESULT is what can be returned
+// 2 parts producing and consuming
+
+// first example
+// const promise = new Promise((resolve, reject) => {
+
+//     let fileLoaded = true;
+
+//     if(fileLoaded){
+//         resolve("File loaded")
+//     }
+//     else(
+//         reject("File is NOT loaded")
+//     )
+// })
+
+// promise.then((value) => console.log(value)) // value is file loaded or file not loaded
+//         .catch(error => console.log(error)) //pro rejected
+
+// second example
+
+// const wait = time => new Promise(resolve => {
+//     setTimeout(resolve, time)
+// })
+
+// wait(3000).then(() => console.log("Thanks for waiting"))
+
+// ASYNC
+// makes a function return a Promise
+
+// first option
+// async function loadFile() {
+//   let fileLoaded = true;
+
+//   if (fileLoaded) {
+//     return "File loaded";
+//   } else {
+//     return "File not loaded";
+//   }
+// }
+
+// loadFile()
+//   .then((value) => consolo.log(value))
+//   .catch((error) => console.log(error));
+
+// second option
+
+function loadFile() {
+  let fileLoaded = true;
+
+  if (fileLoaded) {
+    return Promise.resolve("File loaded");
+  } else {
+    return Promise.reject("File not loaded");
+  }
+}
+
+loadFile()
+  .then((value) => consolo.log(value))
+  .catch((error) => console.log(error));
