@@ -821,16 +821,18 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 
 // second option
 
-function loadFile() {
-  let fileLoaded = true;
+// function loadFile() {
+//   let fileLoaded = true;
 
-  if (fileLoaded) {
-    return Promise.resolve("File loaded");
-  } else {
-    return Promise.reject("File not loaded");
-  }
-}
+//   if (fileLoaded) {
+//     return Promise.resolve("File loaded");
+//   } else {
+//     return Promise.reject("File not loaded");
+//   }
+// }
 
-loadFile()
-  .then((value) => consolo.log(value))
-  .catch((error) => console.log(error));
+// loadFile()
+//   .then((value) => consolo.log(value))
+//   .catch((error) => console.log(error));
+
+// AWAIT
