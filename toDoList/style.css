@@ -1,0 +1,22 @@
+#btnDelete {
+  background-color: blue;
+  /* display: grid; */
+  border: 1px solid black;
+  /* float: left; */
+  display: inline-block;
+}
+
+#itemLabel {
+  display: inline-block;
+  background-color: red;
+  border: 1px solid black;
+  /* float: left; */
+  /* display: flex; */
+}
+
+/* #bt {
+  display: inline-block;
+}
+#te {
+  display: inline-block;
+} */
