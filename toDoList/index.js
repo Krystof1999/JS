@@ -68,6 +68,7 @@ function createTask(task) {
   var ul = document.createElement("ul");
   var li = document.createElement("li");
   var btnDelete = document.createElement("button");
+  var btnDone = document.createElement("button");
 
   ul.setAttribute("id", "ul");
   li.setAttribute("id", "li");
@@ -76,17 +77,19 @@ function createTask(task) {
 
   btnDelete.id = "btnDelete";
   btnDelete.innerHTML = "Delete";
+  btnDone.id = "btnDone";
+  btnDone.innerHTML = "Done";
   li.appendChild(document.createTextNode(task));
+  ul.appendChild(btnDone);
   ul.appendChild(li);
   ul.appendChild(btnDelete);
 
-  // btnDelete.addEventListener("click", function handleClick(event) {
-  //   console.log("element clicked 🎉🎉🎉", event);
-  // });
-
   btnDelete.onclick = function () {
-    console.log("test");
     ul.style.display = "none";
+  };
+
+  btnDone.onclick = function () {
+    ul.style.opacity = 0.5;
   };
 }
 
