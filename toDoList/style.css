@@ -1,8 +1,9 @@
+/* 
 #btnDelete {
   background-color: blue;
-  /* display: grid; */
+  display: grid;
   border: 1px solid black;
-  /* float: left; */
+  float: left;
   display: inline-block;
 }
 
@@ -10,13 +11,39 @@
   display: inline-block;
   background-color: red;
   border: 1px solid black;
-  /* float: left; */
-  /* display: flex; */
+  float: left;
+  display: flex;
 }
 
-/* #bt {
+#bt {
   display: inline-block;
 }
 #te {
   display: inline-block;
 } */
+
+
+/* #ul{
+  list-style: none;
+ 
+}
+
+#btnDelete{
+
+} */
+
+
+#ul{
+display: table-row;
+
+
+}
+
+#li{
+display: table-cell;
+}
+
+#btnDelete{
+
+
+} 
