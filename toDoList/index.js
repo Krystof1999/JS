@@ -2,12 +2,7 @@ const input = document.getElementById("input");
 const button = document.getElementById("button");
 const itemLabel = document.getElementById("itemLabel");
 const test = document.getElementById("test");
-
-// let ul;
-// let li;
-// let btnDelete;
-
-// const buttonDelete = document.getElementById("btnDelete");
+const divBody = document.getElementById("bodyDiv");
 
 button.onclick = function () {
   // take input from input and create task with that input
@@ -17,54 +12,14 @@ button.onclick = function () {
   clearInput();
 };
 
-// btnDelete.onclick = function () {
-//   console.log("test");
-// };
-// buttonDelete.onclick = function () {
-//   console.log(click);
-// };
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    button.click();
+  }
+});
 
 function createTask(task) {
-  // button
-  // let btn = document.createElement("button");
-  // btn.id = "btnDelete";
-  // btn.innerHTML = "Delete";
-  // // btn.style.bacgroundColor = "blue";
-  // document.body.appendChild(btn);
-  // ul
-  // var x = document.createElement("UL");
-  // x.setAttribute("id", "itemLabel");
-  // document.body.appendChild(x);
-  // // li
-  // var y = document.createElement("LI");
-  // var t = document.createTextNode(task);
-  // y.appendChild(t);
-  // document.getElementById("itemLabel").appendChild(y);
-  // // li button
-  // var but = document.createElement("button");
-  // but.id = "btnDelete";
-  // but.innerHTML = "Delete";
-  // document.body.appendChild(but);
-  // // const count = document.getElementById("button");
-  // // for (let i = 0; i < count.length; i++) {
-  // //   console.log("hello");
-  // // }
-
-  // var ul = document.getElementById("ul");
-  // var li = document.createElement("li");
-  // li.setAttribute("id", "li");
-  // li.appendChild(document.createTextNode("String"));
-  // ul.appendChild(li);
-
-  // var btn = document.createElement("button");
-  // btn.id = "btnDelete";
-  // btn.innerHTML = "Delete";
-  // ul.appendChild(btn);
-
-  // var ul = document.createElement("ul");
-  // var li = document.createElement("li");
-  // var btnDelete = document.createElement("button");
-
   var ul = document.createElement("ul");
   var li = document.createElement("li");
   var btnDelete = document.createElement("button");
@@ -74,6 +29,7 @@ function createTask(task) {
   li.setAttribute("id", "li");
 
   document.body.appendChild(ul);
+  divBody.appendChild(ul);
 
   btnDelete.id = "btnDelete";
   btnDelete.innerHTML = "Delete";
@@ -84,12 +40,21 @@ function createTask(task) {
   ul.appendChild(li);
   ul.appendChild(btnDelete);
 
+  // delete
   btnDelete.onclick = function () {
     ul.style.display = "none";
   };
 
+  // done
+  let clickCount = 0;
   btnDone.onclick = function () {
-    ul.style.opacity = 0.5;
+    if (clickCount % 2 == 0) {
+      ul.style.opacity = 0.5;
+    } else {
+      ul.style.opacity = 1;
+    }
+    clickCount += 1;
+    console.log(clickCount);
   };
 }
 

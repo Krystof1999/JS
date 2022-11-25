@@ -1,49 +1,42 @@
-/* 
-#btnDelete {
-  background-color: blue;
-  display: grid;
-  border: 1px solid black;
-  float: left;
-  display: inline-block;
+
+ body{
+  background-color: #318CE7;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
 }
-
-#itemLabel {
-  display: inline-block;
-  background-color: red;
-  border: 1px solid black;
-  float: left;
-  display: flex;
+#bodyDiv{
+  background-color: aliceblue;
+border: 1px solid black;
+border-radius: 8px;
+padding-top: 40px;
+padding-left: 25px;
+padding-right: 25px;
+padding-bottom: 40px;
 }
-
-#bt {
-  display: inline-block;
+#input{
+  border: 2px solid #3457D5;
+  border-radius: 5px;
+  padding: 9px;
+  padding-right: 80px;
+  margin-right: 5px;
+  margin-bottom: 20px;
 }
-#te {
-  display: inline-block;
-} */
-
-
-/* #ul{
-  list-style: none;
- 
+#button{
+  background-color: #007FFF;
+  border: 2px solid #3457D5;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
-
-#btnDelete{
-
-} */
-
-
 #ul{
 display: table-row;
-
-
 }
 
 #li{
 display: table-cell;
 }
 
-#btnDelete{
-
-
-} 
