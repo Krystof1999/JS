@@ -835,4 +835,178 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   .then((value) => consolo.log(value))
 //   .catch((error) => console.log(error));
 
-// AWAIT
+// AWAIT - makes an async function wait for a Promise
+
+// async function loadFile() {
+//   let fileLoaded = false;
+
+//   if (fileLoaded) {
+//     return "File loaded";
+//   } else {
+//     throw "File not loaded";
+//   }
+// }
+
+// async function startProcess() {
+//   try {
+//     let message = await loadFile();
+//     console.log(message);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// startProcess();
+
+// ES6 MODULES
+// // in to the html <script type="module" src="index.js"></script>
+// import { PI, getCircumference, getArea } from "./math_util.js"; // first option
+// // import * as MathUtil from "./math_util.js"; // second option - in the code has to be with MathUtil.PI ...
+
+// console.log(PI);
+
+// let circumference = getCircumference(10);
+// console.log(circumference);
+
+// let area = getArea(10);
+// console.log(area);
+// math_util.js
+
+// DOM - DOCUMENT OBJECT MODEL (API)
+// interface for changing the content of the page
+
+// console.log(document);
+// console.log(document.title);
+// console.log(document.URL);
+
+// document.title = "New TItle";
+// // document.location = "https://www.google.com";
+
+// document.body.style.backgroundColor = "skyblue";
+// document.getElementById('myDiv').innerHTML = "Hello"
+
+// ELEMENT SELECTORS
+
+//html
+{
+  /* <h1 id="MyTitle">This is title</h1>
+
+<input type="radio" name="fruits" value="apple" checked="checked" />
+<label for="apple">apple</label><br />
+<input type="radio" name="fruits" value="orange" />
+<label for="orange">orange</label><br />
+<input type="radio" name="fruits" value="banana" />
+<label for="banana">banana</label><br />
+
+<ul>
+  <li>carrots</li>
+  <li>onions</li>
+  <li>cucumber</li>
+</ul>
+
+<div class="desserts">ice cream</div>
+<div class="desserts">cake</div>
+<div class="desserts">pie</div> */
+}
+
+// GETELEMENTBYID
+// let element = document.getElementById('MyTitle')
+// element.style.backgroundColor = "red"
+
+// GETELEMENTSBYNAME
+// let fruits = document.getElementsByName("fruits");
+
+// console.log(fruits[0]); // apple
+// console.log(fruits[1]); // orange
+// console.log(fruits[2]); // banana
+
+// fruits.forEach((fruit) => {
+//   if (fruit.checked) {
+//     console.log(fruit.value);
+//   } else {
+//     console.log(`it is not checked`);
+//   }
+// });
+
+// GETELEMENTSBYTAGNAME
+
+// let vegetables = document.getElementsByTagName("li");
+// vegetables[0].style.backgroundColor = "blue";
+
+// GETELEMENTSBYCLASSNAME
+
+// let desserts = document.getElementsByClassName("desserts");
+// desserts[0].style.backgroundColor = "red";
+
+// QUERYSELECTOR
+
+// let element = document.querySelector("#MyTitle");
+// element.style.backgroundColor = "red";
+
+// let element = document.querySelector(".desserts")
+// let element = document.querySelector("li")
+// let element = document.querySelector("[for]")
+
+// QUERYSELECTOR ALL
+
+// let elements = document.querySelectorAll("li");
+
+// elements.forEach((element) => {
+//   element.style.backgroundColor = "yellow";
+// });
+
+// DOM TRAVERSAL
+
+// .firstElementChild
+// .lastElementChild    pokud to je document.body.lastElementChild => bude to <script>
+// .parentElement
+// .nextElementSibling
+// .previousElementSibling
+// .children[]
+// Array.from(.children)
+
+// let element = document.querySelector("#vegetables");
+// let child = element.parentElement; // the whole body
+// let sibling1 = element.nextElementSibling;  //deserts
+// let sibling2 = element.previousElementSibling; // fruit
+// console.log(child);
+// child.style.backgroundColor = "green";
+
+// let element = document.querySelector("#fruit");
+// // let child = element.children[0]
+
+// // pro vypsani vsech children bez []
+// let children = Array.from(element.children);
+
+// children.forEach((child) => {
+//   console.log(child.innerHTML);
+// });
+
+// ADD/CHANGE HTML ELEMENTS
+// .innerHtmnl (vulnerable to XSS attacks)
+// .textContent (more secure)
+
+// const nameTag = document.createElement("h1");
+// // nameTag.innerHTML = window.prompt("Enter your title");
+// nameTag.textContent = window.prompt("Enter your title"); //safer (user can not input virut in to the promt)
+// document.body.append(nameTag);
+
+// const myList = document.querySelector("#fruit");
+// const listItem = document.createElement("li");
+// listItem.textContent = "mango";
+// // myList.append(listItem); // at the bottom
+// // myList.prepend(listItem); // at the top
+
+// myList.insertBefore(listItem, myList.getElementsByTagName("li")[2]);
+
+//ADD/CHANGE CSS PROPERTIES
+
+// const title = document.getElementById("title");
+
+// title.style.backgroundColor = "red";
+
+//EVENTS
+
+function doSomething() {
+  console.log("hello");
+}
