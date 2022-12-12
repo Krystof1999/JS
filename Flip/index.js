@@ -1,193 +1,99 @@
 var buttons = document.querySelectorAll("#button");
+const startButton = document.getElementById("startButon");
 let counter = 0;
 let cardValue1;
 let cardValue2;
-cards = ["A", "B", "A", "B", "C", "C"];
+const arrayIcons = [
+  "fa-solid fa-hippo",
+  "fa-solid fa-hippo",
+  "fa-solid fa-dog",
+  "fa-solid fa-dog",
+  "fa-solid fa-cat",
+  "fa-solid fa-cat",
+  "fa-solid fa-cow",
+  "fa-solid fa-cow",
+];
+let shuffleArray = [];
+const arrayX = ["X", "X", "X", "X", "X", "X", "X", "X"];
+let ar3 = [];
+let buttonOdd;
+let buttonEven;
+let icon1;
+let icon2;
 
-// buttons.forEach((button, i) => {
-//   button.onclick = function () {
-//     counter += 1;
-//     button.innerHTML = cards[i];
+shuffleArray = shuffle(arrayIcons);
 
-//     if (counter % 2 != 0) {
-//       cardValue1 = button.innerHTML;
-//       console.log(`card1: ${cardValue1}`);
-//     }
+hideButtons();
 
-//     // flip the card over after 2 tryes
-//     if (counter % 2 == 0) {
-//       cardValue2 = button.innerHTML;
-//       console.log(`card2: ${cardValue2}`);
+startButton.onclick = () => {
+  showButtons();
+  play();
+};
 
-//       //
-//       buttons.forEach((button) => {
-//         if (cardValue1 == cardValue2) {
-//           console.log(
-//             `card1: ${cardValue1} is the same as card2: ${cardValue2}`
-//           );
+function play() {
+  buttons.forEach((button, i) => {
+    button.innerHTML = arrayX[i];
 
-//           // let storage = [cardValue1, cardValue2];
-//           // console.log(`storage: ${storage}`);
-//         } else {
-//           wait(700).then(() => {
-//             console.log(`carValue1: ${cardValue1}`);
-//             // if (button.innerHTML == "X" || cardValue1 == cardValue2) {
-//             //   console.log("no");
-//             // } else {
-//             //   cardValue1 = cards[i];
-//             //   cardValue2 = cards[i];
-//             //   button.innerHTML = "X";
-//             // }
-//             // button.innerHTML = "X";
-//             // cardValue1 = cards[i];
-//             // cardValue2 = cards[i];
+    button.onclick = function () {
+      counter += 1;
+      button.setAttribute("class", shuffleArray[i]);
+      button.innerHTML = " ";
+      if (counter % 2 != 0) {
+        buttonOdd = button;
+        icon1 = button.getAttribute("class");
+        ar3[0] = icon1;
+      } else {
+        icon2 = button.getAttribute("class");
+        buttonEven = button;
+        ar3[1] = icon2;
+        if (ar3[0] == ar3[1]) {
+          wait(1000).then(() => {
+            buttonEven.style.visibility = "hidden";
+            buttonOdd.style.visibility = "hidden";
+          });
+        } else {
+          wait(700).then(() => {
+            buttonEven.innerHTML = arrayX[i];
+            buttonOdd.innerHTML = arrayX[i];
+            buttonOdd.setAttribute("class", "");
+            buttonEven.setAttribute("class", "");
+          });
+        }
+      }
+    };
+  });
+}
 
-//             // button.innerHTML = cardValue1;
-//             // button.innerHTML = cardValue2;
+function hideButtons() {
+  buttons.forEach((btn) => {
+    btn.style.visibility = "hidden";
+  });
+}
 
-//             // button.innerHTML = "X";
-//           });
-//         }
-//       });
-//     }
-//   };
-// });
-
-// buttons.forEach((button, i) => {
-//   button.onclick = function () {
-//     counter += 1;
-//     button.innerHTML = cards[i];
-
-//     // fist, trhird... flip
-//     if (counter % 2 != 0) {
-//       cardValue1 = button.innerHTML;
-//       // console.log(`card1: ${cardValue1}`);
-//     }
-
-//     // second, fourth... flip
-//     if (counter % 2 == 0) {
-//       cardValue2 = button.innerHTML;
-//       // console.log(`card2: ${cardValue2}`);
-
-//       if (cardValue1 == cardValue2) {
-//         // card1 a card 2 zustan otocena
-//         buttons.forEach((btn) => {
-//           // const collect = require("collect.js");
-//         });
-//       }
-
-//       //
-//       // buttons.forEach((button) => {
-//       //   if (cardValue1 == cardValue2) {
-//       //     console.log(
-//       //       `card1: ${cardValue1} is the same as card2: ${cardValue2}`
-//       //     );
-//       //   } else {
-//       //     wait(700).then(() => {
-//       //       console.log(`carValue1: ${cardValue1}`);
-//       //     });
-//       //   }
-//       // });
-//     }
-//   };
-// });
+function showButtons() {
+  buttons.forEach((btn) => {
+    btn.style.visibility = "visible";
+  });
+}
 
 function wait(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-// function play() {}
+function shuffle(array) {
+  let currentIndex = array.length;
 
-// getCards(buttons);
-// asyncCall(buttons);
-// flipTwoCards(button);
+  while (currentIndex != 0) {
+    let randomIndex = Math.floor(Math.random() * array.length);
+    currentIndex -= 1;
 
-// buttons.forEach((but, i) => {
-//   console.log(but.innerHTML);
-//   cardArray[i] = but.innerHTML;
-//   //   console.log(cardArray);
-// });
+    let temp = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
 
-// buttons.forEach((button) => {
-//   //   console.log(button.innerHTML);
-//   //   button.onclick = function () {
-//   //     counter += 1;
-//   //     if (counter <= 2) {
-//   //       console.log(button.innerHTML);
-//   //       button.innerHTML = "X";
-//   //     }
-//   //   };
-//   flipTwoCards(button);
-
-//   //   flipBack(button);
-// });
-
-// function getCards(buttons) {
-//   buttons.forEach((but, i) => {
-//     // console.log(but.innerHTML);
-//     cardArray[i] = but.innerHTML;
-//   });
-//   console.log(cardArray);
-// }
-
-// function flipTwoCards(button) {
-//   button.onclick = function () {
-//     counter += 1;
-//     if (counter <= 2) {
-//       console.log(button.innerHTML);
-//       button.innerHTML = "X";
-//     }
-//   };
-
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve("resolved");
-//     }, 2000);
-//   });
-// }
-
-// function flipBack(button) {
-//   button.innerHTML = "ahoj";
-// }
-
-// function call() {
-//   //   let x = console.log("calling");
-//   //   setTimeout("ahoj", 1000);
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve("ahoj");
-//     }, 2000);
-//   });
-// }
-
-// async function asyncCall(button) {
-//   let firstCall = console.log(`first call ${button}`);
-//   const result = await flipTwoCards(button);
-//   console.log(result);
-// }
-
-// // you can click on button 2 after the first button is clicked
-// let array = ["A", "B", "C"];
-// clickButton1();
-
-// function clickButton1() {
-//   button1.onclick = function () {
-//     return new Promise((resolve) => {
-//       setTimeout(() => {
-//         resolve(
-//           array.forEach((ar) => {
-//             console.log("waited");
-//           })
-//         );
-//       }, 2000);
-//     });
-//   };
-// }
-
-// async function clickButton2() {
-//   let result = await clickButton1();
-//   console.log(result);
-// }
+  return array;
+}
 
 function x() {
   var fruits = ["A", "A", "B", "B", "C", "C"];

@@ -1006,7 +1006,45 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 // title.style.backgroundColor = "red";
 
 //EVENTS
+// const element = document.getElementById('btn')
+// element.onclick = doSomething;
 
-function doSomething() {
-  console.log("hello");
-}
+// function doSomething() {
+//   console.log("hello");
+// }
+
+// const element = document.body;
+// element.onload = doSomething;
+
+// const element = document.getElementById("textBox");
+// element.onchange = doSomething;
+
+// const element = document.getElementById('div')
+// element.onmouseover = doSomething;
+// element.onmouseout = doSomethingElse;
+// element.onmousedown = doSomething; // nemusim pouzivat button
+// element.onmouseup = doSomethingElse;
+
+// . ADD EVENT LISTENER (event, function, useCapture)
+
+// const innerDiv = document.getElementById('innerDiv')
+// const outerDiv = document.getElementById('outerDiv')
+
+// innerDiv.addEventListener('mouseover', changeRed);
+// innerDiv.addEventListener('mouseout', changeGreen);
+
+// function changeRed(){
+//   innerDiv.style.backgroundColor = 'red'
+// }
+
+// function changeGreen(){
+//   innerDiv.style.backgroundColor = 'green'
+// }
+
+// innerDiv.addEventListener('click', changeBlue); // nejprve se zmeni inner div a pak outer div
+// outerDiv.addEventListener('click', changeBlue, true); // udela se to naopak
+
+// function changeGreen(){
+//   alert(`you selected ${this.id}`)
+//   this.style.backgroundColor = 'blue'
+// }
