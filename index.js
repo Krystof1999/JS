@@ -24,7 +24,7 @@
 //     currentTime();
 //   }, 1000);
 // }
-// currentTime();
+// currentTime();.
 
 function current() {
   let date = new Date();
