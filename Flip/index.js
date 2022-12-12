@@ -4,47 +4,99 @@ let cardValue1;
 let cardValue2;
 cards = ["A", "B", "A", "B", "C", "C"];
 
-buttons.forEach((button, i) => {
-  button.onclick = function () {
-    counter += 1;
-    button.innerHTML = cards[i];
+// buttons.forEach((button, i) => {
+//   button.onclick = function () {
+//     counter += 1;
+//     button.innerHTML = cards[i];
 
-    if (counter % 2 != 0) {
-      //(counter == 1)
-      cardValue1 = button.innerHTML;
-      console.log(`card1: ${cardValue1}`);
-    }
+//     if (counter % 2 != 0) {
+//       cardValue1 = button.innerHTML;
+//       console.log(`card1: ${cardValue1}`);
+//     }
 
-    // if match => leave the cards visible
+//     // flip the card over after 2 tryes
+//     if (counter % 2 == 0) {
+//       cardValue2 = button.innerHTML;
+//       console.log(`card2: ${cardValue2}`);
 
-    // flip the card over after 2 tryes
-    if (counter % 2 == 0) {
-      //(counter == 2)
-      cardValue2 = button.innerHTML;
-      console.log(`card2: ${cardValue2}`);
-      buttons.forEach((button) => {
-        if (cardValue1 == cardValue2) {
-          console.log(
-            `card1: ${cardValue1} is the same as card2: ${cardValue2}`
-          );
-          //   button.innerHTML = cards[i];
-        } else {
-          wait(1000).then(() => {
-            button.innerHTML = "X";
-          });
-        }
-      });
-    }
-    // if (cardValue1 == cardValue2) {
-    //   console.log(`card1: ${cardValue1} is the same as card2: ${cardValue2}`);
-    // //   button.innerHTML = cards[i];
-    // }
-  };
-});
+//       //
+//       buttons.forEach((button) => {
+//         if (cardValue1 == cardValue2) {
+//           console.log(
+//             `card1: ${cardValue1} is the same as card2: ${cardValue2}`
+//           );
+
+//           // let storage = [cardValue1, cardValue2];
+//           // console.log(`storage: ${storage}`);
+//         } else {
+//           wait(700).then(() => {
+//             console.log(`carValue1: ${cardValue1}`);
+//             // if (button.innerHTML == "X" || cardValue1 == cardValue2) {
+//             //   console.log("no");
+//             // } else {
+//             //   cardValue1 = cards[i];
+//             //   cardValue2 = cards[i];
+//             //   button.innerHTML = "X";
+//             // }
+//             // button.innerHTML = "X";
+//             // cardValue1 = cards[i];
+//             // cardValue2 = cards[i];
+
+//             // button.innerHTML = cardValue1;
+//             // button.innerHTML = cardValue2;
+
+//             // button.innerHTML = "X";
+//           });
+//         }
+//       });
+//     }
+//   };
+// });
+
+// buttons.forEach((button, i) => {
+//   button.onclick = function () {
+//     counter += 1;
+//     button.innerHTML = cards[i];
+
+//     // fist, trhird... flip
+//     if (counter % 2 != 0) {
+//       cardValue1 = button.innerHTML;
+//       // console.log(`card1: ${cardValue1}`);
+//     }
+
+//     // second, fourth... flip
+//     if (counter % 2 == 0) {
+//       cardValue2 = button.innerHTML;
+//       // console.log(`card2: ${cardValue2}`);
+
+//       if (cardValue1 == cardValue2) {
+//         // card1 a card 2 zustan otocena
+//         buttons.forEach((btn) => {
+//           // const collect = require("collect.js");
+//         });
+//       }
+
+//       //
+//       // buttons.forEach((button) => {
+//       //   if (cardValue1 == cardValue2) {
+//       //     console.log(
+//       //       `card1: ${cardValue1} is the same as card2: ${cardValue2}`
+//       //     );
+//       //   } else {
+//       //     wait(700).then(() => {
+//       //       console.log(`carValue1: ${cardValue1}`);
+//       //     });
+//       //   }
+//       // });
+//     }
+//   };
+// });
 
 function wait(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+// function play() {}
 
 // getCards(buttons);
 // asyncCall(buttons);
@@ -136,3 +188,17 @@ function wait(time) {
 //   let result = await clickButton1();
 //   console.log(result);
 // }
+
+function x() {
+  var fruits = ["A", "A", "B", "B", "C", "C"];
+  let filtered = fruits.filter(checkValue);
+}
+adults.forEach(print);
+
+function checkValue(element) {
+  return element != "";
+}
+
+function print(element) {
+  console.log(element);
+}
