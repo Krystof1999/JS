@@ -94,17 +94,3 @@ function shuffle(array) {
 
   return array;
 }
-
-function x() {
-  var fruits = ["A", "A", "B", "B", "C", "C"];
-  let filtered = fruits.filter(checkValue);
-}
-adults.forEach(print);
-
-function checkValue(element) {
-  return element != "";
-}
-
-function print(element) {
-  console.log(element);
-}
