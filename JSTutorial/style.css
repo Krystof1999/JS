@@ -1,0 +1,12 @@
+/* #movingDiv{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid;
+    position: relative
+} */
+
+#canvas{
+    border: 1px solid black;
+    /* background-color: skyblue; */
+}

@@ -1048,3 +1048,185 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   alert(`you selected ${this.id}`)
 //   this.style.backgroundColor = 'blue'
 // }
+
+// SHOW/HIDE IMAGE
+
+// const img = document.getElementById("img");
+// const btn = document.getElementById("myButton");
+
+// btn.addEventListener("click", () => {
+//   if (img.style.display == "none") {
+//     // img.style.visibility = 'visible' // this will save the space on the page
+//     img.style.display = "block";
+//   } else {
+//     img.style.display = "none";
+//   }
+// });
+
+// MOVING ELEMENT
+
+// const movingDiv = document.getElementById("movingDiv");
+// window.addEventListener("keydown", move);
+// let x = 0;
+// let y = 0;
+
+// // window.addEventListener("keydown", (event) => console.log(event.key)); // displays key that is pressed on the keyboard
+
+// function move(event) {
+//   switch (event.key) {
+//     case "ArrowDown":
+//       y += 5;
+//       movingDiv.style.top = y + "px";
+//       break;
+//     case "ArrowUp":
+//       y -= 5;
+//       movingDiv.style.top = y + "px";
+//       break;
+//     case "ArrowLeft":
+//       x -= 5;
+//       movingDiv.style.left = x + "px";
+//       break;
+//     case "ArrowRight":
+//       x += 5;
+//       movingDiv.style.left = x + "px";
+//       break;
+//   }
+// }
+
+// ANIMATIONS
+// const movingDiv = document.getElementById("movingDiv");
+// const btn = document.getElementById("btn");
+
+// btn.addEventListener("click", begin);
+
+// function begin() {
+//   let timerID = null;
+//   let x = 0;
+//   let y = 0;
+//   let degrees = 0;
+//   let scaleX = 1;
+//   let scaleY = 1;
+
+//   timerID = setInterval(frame, 5);
+
+//   function frame() {
+//     // MOVEMENT
+//     // if (x >= 200 || y >= 200) {
+//     //   clearInterval(timerID);
+//     // } else {
+//     //   x += 1;
+//     //   y += 1;
+//     //   movingDiv.style.left = x + "px";
+//     //   movingDiv.style.top = y + "px";
+//     // }
+
+//     // ROTATION
+//     // if (degrees >= 360) {
+//     //   clearInterval(timerID);
+//     // } else {
+//     //   degrees += 1;
+//     //   movingDiv.style.transform = "rotateX(" + degrees + "deg)";
+//     //   movingDiv.style.transform = "rotateY(" + degrees + "deg)";
+//     //   movingDiv.style.transform = "rotateZ(" + degrees + "deg)";
+
+//     //  ROTATE AND MOVE
+
+//     // if (x >= 200 || y >= 200) {
+//     //   clearInterval(timerID);
+//     // } else {
+//     //   degrees += 5; // make the spinnig faster
+//     //   x += 1;
+//     //   y += 1;
+
+//     //   movingDiv.style.left = x + "px";
+//     //   movingDiv.style.top = y + "px";
+//     //   movingDiv.style.transform = "rotateZ(" + degrees + "deg)";
+//     // }
+
+//     // SCALE
+
+//     // if (scaleX >= 2 || scaleY >= 2) {
+//     if (scaleX <= 0.1 || scaleY <= 0.1) {
+//       // shirnk
+//       clearInterval(timerID);
+//     } else {
+//       // scaleX += 0.01;
+//       // scaleY += 0.01;
+//       scaleX -= 0.01; // shirnk
+//       scaleY -= 0.01; // shirnk
+//       movingDiv.style.transform = "scale(" + scaleX + ", " + scaleY + ")";
+//     }
+//   }
+// }
+
+// CANVAS
+
+// DRAW LINES
+let canvas = document.getElementById("canvas");
+
+let context = canvas.getContext("2d");
+
+// context.strokeStyle = "purple";
+// context.lineWidth = 10;
+// context.beginPath();
+// context.moveTo(0, 0);
+// context.lineTo(250, 250);
+// context.lineTo(250, 500);
+// context.moveTo(500, 0);
+// context.lineTo(250, 250);
+// context.stroke();
+
+// DRAW TRIANGLE
+
+// context.strokeStyle = "grey";
+// context.fillStyle = "yellow";
+// context.lineWidth = 10;
+
+// context.beginPath();
+
+// context.moveTo(250, 0);
+// context.lineTo(0, 250);
+// context.lineTo(500, 250);
+// context.lineTo(250, 0);
+
+// context.stroke();
+// context.fill();
+
+// DRAW RECTANGLE
+// context.fillStyle = "black";
+// context.fillRect(0, 0, 250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(0, 0, 250, 250);
+
+// context.fillStyle = "red";
+// context.fillRect(0, 250, 250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(0, 250, 250, 250);
+
+// context.fillStyle = "green";
+// context.fillRect(250, 250, 250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(250, 250, 250, 250);
+
+// context.fillStyle = "blue";
+// context.fillRect(250, 0, 250, 250);
+// context.strokeStyle = "black";
+// context.strokeRect(250, 0, 250, 250);
+
+// DRAW CIRCLE
+// (x, y, r, sAngle, eAngle, counterclockwise)
+// context.fillStyle = "blue";
+// context.lineWidth = 10;
+// context.strokeStyle = "darkblue";
+// context.beginPath();
+
+// context.arc(250, 250, 200, 0, 2 * Math.PI);
+
+// context.stroke();
+// context.fill();
+
+// DRAW TEXT
+// context.font = "50px MV Boli";
+// context.fillStyle = "grey";
+// context.textAlign = "center";
+// context.fillText("You win", canvas.width / 2, canvas.height / 2);
