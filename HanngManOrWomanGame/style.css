@@ -1,0 +1,9 @@
+#letterDiv {
+  border-bottom: 2px solid black;
+  float: left;
+  margin: 40px;
+}
+
+#letter {
+  visibility: hidden;
+}
