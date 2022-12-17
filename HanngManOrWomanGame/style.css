@@ -7,3 +7,7 @@
 #letter {
   visibility: hidden;
 }
+
+#playAgainBtn {
+  margin: 20px;
+}
