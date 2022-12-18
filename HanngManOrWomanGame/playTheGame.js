@@ -26,7 +26,6 @@ export function playTheGame() {
   buttons.forEach((btn) => {
     btn.onclick = function () {
       var correct = false;
-      // count += 1;
       btnLetterHtml = btn.innerHTML; //! btn letter
       letterArray.forEach((letter) => {
         finalLetter = letter.innerHTML; //! P R A G
@@ -34,10 +33,6 @@ export function playTheGame() {
           letter.style.visibility = "visible";
           correct = true;
           correctCount += 1;
-          // setTimeout(btnDesibled(btn), 1000);
-          console.log(`btnLetterHtml ${btnLetterHtml}`);
-          console.log(`finalLetter ${finalLetter}`);
-          // console.log(`correctCount ${correctCount}`);
         }
       });
       if (correctCount == wordLength) {
@@ -48,13 +43,11 @@ export function playTheGame() {
       if (correct != true) {
         lives -= 1;
         count += 1;
+        canvas(count);
       }
       setTimeout(btnDesibled(btn), 1000);
-      // lives -= 1;//
+      // todo: noha se ma vykreslit pred game over (mozna to if(correcs =! true dat pred game over))
       livesLeft(lives);
-      console.log(`correctCount ${correctCount}`);
-      console.log(`lives ${lives}`);
-      console.log(`count ${count}`);
     };
   });
 }
@@ -74,4 +67,61 @@ function livesLeft(livesLeft) {
 
 function btnDesibled(btn) {
   btn.disabled = true;
+}
+
+function canvas(count) {
+  let canvas = document.getElementById("canvas");
+
+  let context = canvas.getContext("2d");
+  context.strokeStyle = "purple";
+  context.lineWidth = 2;
+
+  // todo
+  if (count == 1) {
+    context.moveTo(150, 87);
+    context.lineTo(12, 87);
+    context.stroke();
+  }
+  if (count == 2) {
+    context.lineTo(12, 10);
+    context.stroke();
+  }
+  if (count == 3) {
+    context.lineTo(90, 10);
+    context.stroke();
+  }
+  if (count == 4) {
+    context.lineTo(90, 25);
+    context.stroke();
+  }
+  if (count == 5) {
+    context.beginPath();
+    context.arc(90, 31, 7, 0, 2 * Math.PI);
+    context.stroke();
+  }
+  if (count == 6) {
+    context.moveTo(90, 39);
+    context.lineTo(90, 60);
+    context.stroke();
+  }
+  if (count == 7) {
+    context.moveTo(70, 50);
+    context.lineTo(90, 40);
+    context.stroke();
+  }
+  if (count == 8) {
+    context.moveTo(110, 50);
+    context.lineTo(90, 40);
+    context.stroke();
+  }
+  if (count == 9) {
+    context.moveTo(70, 80);
+    context.lineTo(90, 60);
+    context.stroke();
+  }
+  if (count == 10) {
+    context.moveTo(110, 80);
+    context.lineTo(90, 60);
+    context.stroke();
+  }
 }

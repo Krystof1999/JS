@@ -15,3 +15,8 @@
 #livesDiv {
   margin-top: 250px;
 }
+
+#canvas {
+  background-color: lightgreen;
+  border: 3px dotted green;
+}
