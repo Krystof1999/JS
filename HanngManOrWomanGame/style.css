@@ -1,0 +1,17 @@
+#letterDiv {
+  border-bottom: 2px solid black;
+  float: left;
+  margin: 40px;
+}
+
+#letter {
+  visibility: hidden;
+}
+
+#playAgainBtn {
+  margin: 20px;
+}
+
+#livesDiv {
+  margin-top: 250px;
+}
