@@ -50,7 +50,7 @@ export function playTheGame() {
         count += 1;
       }
       setTimeout(btnDesibled(btn), 1000);
-      // lives -= 1;
+      // lives -= 1;//
       livesLeft(lives);
       console.log(`correctCount ${correctCount}`);
       console.log(`lives ${lives}`);
