@@ -26,9 +26,9 @@ export function playTheGame() {
   buttons.forEach((btn) => {
     btn.onclick = function () {
       var correct = false;
-      btnLetterHtml = btn.innerHTML; //! btn letter
+      btnLetterHtml = btn.innerHTML;
       letterArray.forEach((letter) => {
-        finalLetter = letter.innerHTML; //! P R A G
+        finalLetter = letter.innerHTML;
         if (btnLetterHtml == finalLetter) {
           letter.style.visibility = "visible";
           correct = true;
@@ -38,7 +38,9 @@ export function playTheGame() {
       if (correctCount == wordLength) {
         setTimeout(youWin, 200);
       } else if (count == 9) {
-        setTimeout(youLose(word), 200);
+        wait(200).then(() => {
+          setTimeout(youLose(word), 200);
+        });
       }
       if (correct != true) {
         lives -= 1;
@@ -46,7 +48,6 @@ export function playTheGame() {
         canvas(count);
       }
       setTimeout(btnDesibled(btn), 1000);
-      // todo: noha se ma vykreslit pred game over (mozna to if(correcs =! true dat pred game over))
       livesLeft(lives);
     };
   });
@@ -124,4 +125,8 @@ function canvas(count) {
     context.lineTo(90, 60);
     context.stroke();
   }
+}
+
+function wait(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
 }
