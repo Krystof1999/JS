@@ -1162,9 +1162,9 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 // CANVAS
 
 // DRAW LINES
-let canvas = document.getElementById("canvas");
+// let canvas = document.getElementById("canvas");
 
-let context = canvas.getContext("2d");
+// let context = canvas.getContext("2d");
 
 // context.strokeStyle = "purple";
 // context.lineWidth = 10;
@@ -1230,3 +1230,32 @@ let context = canvas.getContext("2d");
 // context.fillStyle = "grey";
 // context.textAlign = "center";
 // context.fillText("You win", canvas.width / 2, canvas.height / 2);
+
+//! WINDOW
+// window is interface to talk to the web browser the DOM is a property of the window
+
+// console.log(window)
+// console.log(window.innerWidth)
+// console.log(window.innerHeight)
+// console.log(window.scrollX)
+// console.log(window.scrollY)
+
+// console.log(window.location.href);
+// window.location.href = "https://google.com" // redirect to the new http adress
+// console.log(window.location.hostname) // local IP adress
+// console.log(window.location.pathname)
+
+// with button
+// const myBtn = document.querySelector('#myBtn')
+
+// myBtn.addEventListener('click', () => { window.open("https://google.com")})
+// myBtn.addEventListener('click', () => { window.close()})
+// myBtn.addEventListener('click', () => { window.print()})
+
+// window.alert('hello')
+// window.confirm('press ok to continue')
+// let age = window.prompt('enter your age')
+// if(age < 18){
+//   window.alert('you must be 18+ to enter')
+//   window.close()
+// }
