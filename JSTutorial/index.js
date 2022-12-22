@@ -1259,3 +1259,30 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   window.alert('you must be 18+ to enter')
 //   window.close()
 // }
+
+//! Cookies
+// document.cookie =
+//   "firstName=SpongeBob; expires=Sunday, 1 January 2030 12:00:00 UTC; path=/";
+// document.cookie =
+//   "lastnName=SquarePants; expires=Sunday, 1 January 2030 12:00:00 UTC; path=/";
+// console.log(document.cookie);
+
+setCookie("email", "email@cz.cz", 365);
+console.log(document.cookie);
+
+deleteCookie("firstName");
+deleteCookie("lastnName");
+deleteCookie("email");
+
+// function to create cookie
+
+function setCookie(name, value, dayToLive) {
+  const date = new Date();
+  date.setTime(date.getTime() + dayToLive * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + date.toUTCString();
+  document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
+
+function deleteCookie(name) {
+  setCookie(name, null, null);
+}
