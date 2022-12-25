@@ -1297,3 +1297,185 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   const cDecoded = decodeURIComponent(document.cookie);
 //   console.log(cDecoded);
 // }
+
+//! Array tutorial
+const characters = [
+  {
+    name: "Luke Skywalker",
+    height: 172,
+    mass: 77,
+    eye_color: "blue",
+    gender: "male",
+  },
+  {
+    name: "Darth Vader",
+    height: 202,
+    mass: 136,
+    eye_color: "yellow",
+    gender: "male",
+  },
+  {
+    name: "Leia Organa",
+    height: 150,
+    mass: 49,
+    eye_color: "brown",
+    gender: "female",
+  },
+  {
+    name: "Anakin Skywalker",
+    height: 188,
+    mass: 84,
+    eye_color: "blue",
+    gender: "male",
+  },
+];
+//! Filter method
+// //? 1. Get characters with mess greater than 100
+// const greaterThan100 = characters.filter((character) => {
+//   return character.mass > 100;
+// });
+// console.log(greaterThan100);
+
+// //? 2. Get characters with height less than 200
+// const heightLessThen200 = characters.filter((character) => {
+//   return character.height < 200;
+// });
+// // // second option how to write that
+// // const heightLessThen200 = characters.filter(
+// //   (character) => character.height < 200
+// // );
+
+// // console.log(heightLessThen200);
+// // s
+// //? 3. Get all male characters
+// const males = characters.filter((character) => character.gender == "male");
+
+// console.log(males)
+
+// //? 4. Get all famele characters
+// const female = characters.filter((character) => character.gender == "female")
+// console.log(female)
+
+//! Array Reduce - (height and mass are as numbers not string for this)
+// ? 1. Get total mass of all characters
+// const totalMass = characters.reduce((acc, cur) => {
+//  return acc + cur.mass;
+// }, 0);
+// // second option how to write this
+// const totalMass = characters.reduce((acc, cur) => acc + cur.mass, 0)
+// console.log(totalMass)
+
+// //? 2. Get total height of all characters
+// const totalHeight = characters.reduce((acc, cur) => acc + cur.height, 0)
+// console.log(totalHeight)
+
+// ? 3. Get total number of characters by eye color
+// const charactersByEyeColor = characters.reduce((acc, cur) => {
+//   const color = cur.eye_color;
+//   if (acc[color]) {
+//     acc[color]++;
+//   } else {
+//     acc[color] = 1;
+//   }
+//   return acc;
+// }, {});
+
+// console.log(charactersByEyeColor);
+
+// //? 4. Get total number of characters in all the character names
+
+// const charactersInAllCharactersNames = characters.reduce((acc, cur) => acc + cur.name.length, 0)
+// console.log(charactersInAllCharactersNames)
+
+//! Array Map method
+// //? 1. Get array of all names
+// const allNames = characters.map((char => char.name))
+// console.log(allNames)
+
+// //? 2. Get array of all heights
+// const allHeights = characters.map((char => char.height))
+// console.log(allHeights)
+
+// //? 3. Get array of objects with just name and height properties
+// const nameAndHeight = characters.map((char) => char.name + " " + char.height);
+// console.log(nameAndHeight);
+
+// const minifiedCharacters = characters.map((char) => ({
+//   name: char.name,
+//   height: char.height
+// }))
+// console.log(minifiedCharacters)
+//? 4. Get array of all first names
+// const nameAndHeight = characters.map((char) => {
+//   const names = char.name
+//   const space = char.name.indexOf(' ')
+//   const final = names.substring(0, space)
+//   console.log(final);
+// });
+
+// //* second option for split
+// const nameAndHeightspitMethod = characters.map((char) => char.name.split(' ')[0]) // [0] first names // [1] last names
+// console.log(nameAndHeightspitMethod)
+
+//! Array Sort method - (height and mass are as numbers not string for this)
+//? 1. Sort by mass
+// // If the result is negative A is sorted before B
+// // If the result is positive B is sorted before A
+// const sortedByMass = characters.sort((a,b) => {
+//   // return a.mass - b.mass // sorted form the lowest
+//   return  b.mass - a.mass // sorted from the heighest
+// })
+// console.log(sortedByMass)
+//? 2. Sort by height
+// const sortedByHeight = characters.sort((a, b) => a.height - b.height);
+// console.log(sortedByHeight);
+//? 3. Sort by name
+// const sortedByName = characters.sort((a, b) => {
+//   // if(a.name < b.name) return -1;         //from A to Z
+//   // return 1;
+//   if(a.name < b.name) return 1;             //from Z to A
+//   return -1;
+// });
+// console.log(sortedByName)
+//? 4. Sort by gender
+// const sortedBygender = characters.sort((a, b) => {
+//   if (a.gender == "female") return -1;     // female first
+//   return 1;
+//   // if (a.gender == "female") return 1;   // male first
+//   // return -1;
+// });
+// console.log(sortedBygender);
+
+//! Array Every method
+//? 1. Does every character have blue eyes?
+// const allBlueEyes = characters.every(
+//   (character) => character.eye_color == "blue"
+// );  // return false becouse not every character has blue eyes
+// console.log(allBlueEyes);
+
+//? 2. Does every character weight more than 40?
+// const weightMoreThan40 = characters.every((char) => char.mass > 40)
+// console.log(weightMoreThan40)
+//? 3. Is every character shorter than 200
+// const heightMoreThan200 = characters.every((char) => char.height < 200)
+// console.log(heightMoreThan200)
+//? 4. is every character male?
+// const everymale = characters.every((char) => char.gender == 'male')
+// console.log(everymale)
+
+//! Array Some method
+//? 1. Is there at least one male character?
+// const oneMaleCharacter = characters.some(
+//   (character) => character.gender == "male"
+// );
+// console.log(oneMaleCharacter);
+
+//? 2. Is there at least one character with blue eyes?
+// const oneBlueEyes = characters.some((char) => char.eye_color == "blue");
+// console.log(oneBlueEyes);
+//? 3. Is there at least one character taller than 200?
+// const oneTaller = characters.some((char) => char.height > 200)
+// console.log(oneTaller)
+//? 4. Is there at least one character that has mass less than 50?
+// const oneHewier = characters.some((char) => char.mass < 50)
+// console.log(oneHewier)
