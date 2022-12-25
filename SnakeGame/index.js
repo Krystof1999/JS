@@ -17,11 +17,11 @@ let y = 0;
 // wordDiv.appendChild(letterDiv);
 // letterArray.push(letter);
 
-var div = document.createElement("div");
-div.id = "movingDiv";
-div.innerHTML = "2";
+// var div = document.createElement("div");
+// div.id = "movingDiv";
+// div.innerHTML = "2";
 
-wrapper.appendChild(div);
+// wrapper.appendChild(div);
 
 // function move(event) {
 //   switch (event.key) {
