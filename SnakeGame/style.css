@@ -1,0 +1,20 @@
+#wrapper {
+  /* background-color: red; */
+}
+
+#movingDiv1 {
+  border: 1px solid black;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  background-color: lightgreen;
+}
+#movingDiv {
+  border: 1px solid black;
+  position: relative;
+  /* float: left; */
+  float: inline-start;
+  height: 50px;
+  width: 50px;
+  background-color: lightgreen;
+}
