@@ -2,7 +2,8 @@
 Default position: static 
 Relative: muzu s tim hybat napr top:150px
 Absolute: Ignoruje pozici?
-Box
+Fixed: zafixovana pozice napr. kdyz budu scrolovat na strance tak element zustane na stejnem miste
+Sticky: zustane to prilepene na pozici. napr position sticky; top 0px pokud budu skrolovat bude to viditelne porad nahore
 */
 
 body {
