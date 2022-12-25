@@ -1,0 +1,25 @@
+/* //!Position
+Default position: static 
+Relative: muzu s tim hybat napr top:150px
+Absolute: Ignoruje pozici?
+Box
+*/
+
+body {
+  margin: 0px;
+}
+#box1 {
+  border: 5px solid;
+  width: 250px;
+  height: 250px;
+  font-size: 22px;
+  background: lightblue;
+}
+
+#box2 {
+  border: 5px solid;
+  width: 250px;
+  height: 250px;
+  font-size: 22px;
+  background: yellow;
+}
