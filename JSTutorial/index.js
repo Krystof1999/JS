@@ -1093,7 +1093,7 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   }
 // }
 
-// ANIMATIONS
+// //! ANIMATIONS
 // const movingDiv = document.getElementById("movingDiv");
 // const btn = document.getElementById("btn");
 
@@ -1110,40 +1110,40 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   timerID = setInterval(frame, 5);
 
 //   function frame() {
-//     // MOVEMENT
-//     // if (x >= 200 || y >= 200) {
-//     //   clearInterval(timerID);
-//     // } else {
-//     //   x += 1;
-//     //   y += 1;
-//     //   movingDiv.style.left = x + "px";
-//     //   movingDiv.style.top = y + "px";
-//     // }
+//     //! MOVEMENT
+//     if (x >= 200 || y >= 200) {
+//       clearInterval(timerID);
+//     } else {
+//       x += 1;
+//       y += 1;
+//       movingDiv.style.left = x + "px";
+//       movingDiv.style.top = y + "px";
+//     }
 
-//     // ROTATION
-//     // if (degrees >= 360) {
-//     //   clearInterval(timerID);
-//     // } else {
-//     //   degrees += 1;
-//     //   movingDiv.style.transform = "rotateX(" + degrees + "deg)";
-//     //   movingDiv.style.transform = "rotateY(" + degrees + "deg)";
-//     //   movingDiv.style.transform = "rotateZ(" + degrees + "deg)";
+//     //! ROTATION
+//     if (degrees >= 360) {
+//       clearInterval(timerID);
+//     } else {
+//       degrees += 1;
+//       movingDiv.style.transform = "rotateX(" + degrees + "deg)";
+//       movingDiv.style.transform = "rotateY(" + degrees + "deg)";
+//       movingDiv.style.transform = "rotateZ(" + degrees + "deg)";
 
-//     //  ROTATE AND MOVE
+//      //! ROTATE AND MOVE
 
-//     // if (x >= 200 || y >= 200) {
-//     //   clearInterval(timerID);
-//     // } else {
-//     //   degrees += 5; // make the spinnig faster
-//     //   x += 1;
-//     //   y += 1;
+//     if (x >= 200 || y >= 200) {
+//       clearInterval(timerID);
+//     } else {
+//       degrees += 5; // make the spinnig faster
+//       x += 1;
+//       y += 1;
 
-//     //   movingDiv.style.left = x + "px";
-//     //   movingDiv.style.top = y + "px";
-//     //   movingDiv.style.transform = "rotateZ(" + degrees + "deg)";
-//     // }
+//       movingDiv.style.left = x + "px";
+//       movingDiv.style.top = y + "px";
+//       movingDiv.style.transform = "rotateZ(" + degrees + "deg)";
+//     }
 
-//     // SCALE
+//     //! SCALE
 
 //     // if (scaleX >= 2 || scaleY >= 2) {
 //     if (scaleX <= 0.1 || scaleY <= 0.1) {
@@ -1159,9 +1159,9 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 //   }
 // }
 
-// CANVAS
+//! CANVAS
 
-// DRAW LINES
+//! DRAW LINES
 // let canvas = document.getElementById("canvas");
 
 // let context = canvas.getContext("2d");
@@ -1176,7 +1176,7 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 // context.lineTo(250, 250);
 // context.stroke();
 
-// DRAW TRIANGLE
+//! DRAW TRIANGLE
 
 // context.strokeStyle = "grey";
 // context.fillStyle = "yellow";
@@ -1192,7 +1192,7 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 // context.stroke();
 // context.fill();
 
-// DRAW RECTANGLE
+//! DRAW RECTANGLE
 // context.fillStyle = "black";
 // context.fillRect(0, 0, 250, 250);
 // context.strokeStyle = "black";
@@ -1213,7 +1213,7 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 // context.strokeStyle = "black";
 // context.strokeRect(250, 0, 250, 250);
 
-// DRAW CIRCLE
+//! DRAW CIRCLE
 // (x, y, r, sAngle, eAngle, counterclockwise)
 // context.fillStyle = "blue";
 // context.lineWidth = 10;
@@ -1225,7 +1225,7 @@ document.getElementById('p3').innerHTML = 'Hello p3'
 // context.stroke();
 // context.fill();
 
-// DRAW TEXT
+//! DRAW TEXT
 // context.font = "50px MV Boli";
 // context.fillStyle = "grey";
 // context.textAlign = "center";
