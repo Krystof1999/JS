@@ -136,12 +136,59 @@
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-var ballRadius = 10;
+// var ballRadius = 10;
+var cubeSize = 20;
 var x = canvas.width / 2;
 var y = canvas.height - 30;
-var dx = 2;
-var dy = -2;
+var directionX = 2;
+var directionY = -2;
 
-function move() {
-  requestAnimationFrame(move);
+var x2 = canvas.width / 1.5;
+var y2 = canvas.height - 20;
+var directionX2 = 1;
+var directionY2 = -1;
+
+draw();
+
+function drawBall() {
+  ctx.beginPath();
+  ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+  ctx.arc();
+  ctx.fillStyle = "#0095DD";
+  ctx.fill();
+  ctx.closePath();
+}
+function drawCube1() {
+  ctx.fillRect(x, y, 20, 20);
+}
+function drawCube2() {
+  ctx.fillRect(x2, y2, 20, 20);
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawCube1();
+  drawCube2();
+
+  if (x + directionX > canvas.width - cubeSize || x + directionX < 0) {
+    directionX = -directionX;
+  }
+  x += directionX;
+
+  if (y + directionY > canvas.height - cubeSize || y + directionY < 0) {
+    directionY = -directionY;
+  }
+  y += directionY;
+
+  if (x2 + directionX2 > canvas.width - cubeSize || x2 + directionX2 < 0) {
+    directionX2 = -directionX2;
+  }
+  x2 += directionX2;
+
+  if (y2 + directionY2 > canvas.height - cubeSize || y2 + directionY2 < 0) {
+    directionY2 = -directionY2;
+  }
+  y2 += directionY2;
+  requestAnimationFrame(draw);
 }
