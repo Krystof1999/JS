@@ -57,3 +57,8 @@ function func2(e) {
   const el = e.target;
   el.removeEventListener("click", func2);
 }
+
+//* elements creation
+
+// prepand() - vytvori element a umisti ho na prvni misto (pred append())
+// append vs appednChild -> appendChild muzu pouzit pro return (append ne)
