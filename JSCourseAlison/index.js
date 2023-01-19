@@ -61,19 +61,58 @@
 // animation
 
 const output = document.querySelector(".output");
+// taky to muzu vytvorit a nemit to v html
+// const output = document.createElement('div')
+// document.prepend(output)
 output.style.width = "100px";
 output.style.height = "100px";
 output.style.backgroundColor = "red";
 output.style.textAlign = "center";
 output.style.lineHeight = "100px";
+output.style.position = "absolute";
+
+const player = {
+  x: 0,
+  y: 0,
+  animation: window.requestAnimationFrame(moveMe),
+  speed: 10,
+};
 
 const keyz = {
-  arroUp: false,
-  arrowDown: false,
-  arrowRight: false,
-  arrowLeft: false,
+  ArrowDown: false,
+  ArrowUp: false,
+  ArrowRight: false,
+  ArrowLeft: false,
 };
 
 window.addEventListener("keydown", (key) => {
-  // console.log(key.code); // vypise mi to klavesu na kterou budu klikat
+  console.log(key.code); // vypise mi to klavesu na kterou budu klikat
+
+  keyz[key.code] = true;
 });
+
+window.addEventListener("keyup", (key) => {
+  keyz[key.code] = false;
+});
+
+function moveMe() {
+  if (keyz.ArrowRight) {
+    player.x += player.speed;
+    console.log(player);
+  }
+  if (keyz.ArrowLeft) {
+    player.x -= player.speed;
+    console.log(player);
+  }
+  if (keyz.ArrowUp) {
+    player.y -= player.speed;
+    console.log(player);
+  }
+  if (keyz.ArrowDown) {
+    player.y += player.speed;
+    console.log(player);
+  }
+  output.style.left = player.x + "px";
+  output.style.top = player.y + "px";
+  player.animation = window.requestAnimationFrame(moveMe);
+}
