@@ -1,5 +1,7 @@
 //Init Fetch
 const httpFetch = new Fetch();
+// Init UI
+const ui = new UI();
 
 // search input
 const searchField = document.querySelector(".foodSearch");
@@ -14,6 +16,8 @@ searchButton.addEventListener("click", () => {
     httpFetch.getFood(inputValue).then((data) => {
       if (data.results.length > 0) {
         console.log(data);
+
+        ui.displayFood(data);
       } else {
         // Display message: "No food found, please try it again."
         console.log("zero");

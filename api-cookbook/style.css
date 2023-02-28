@@ -1,0 +1,13 @@
+.food-content{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+    padding: 20px;
+}
+
+
+
+.food-label{
+
+width: 200px;
+}
