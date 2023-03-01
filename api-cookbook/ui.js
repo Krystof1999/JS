@@ -19,7 +19,6 @@ class UI {
           /></a>
           <p class="food-label">${result.title}</p>
     </div>
-
     `;
     });
     this.foodContent.innerHTML = output;
