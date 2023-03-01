@@ -5,7 +5,8 @@ const ui = new UI();
 
 const searchField = document.querySelector(".foodSearch");
 const searchButton = document.querySelector(".searchButton");
-const foodImage = document.querySelector(".food-image");
+// const foodImage = document.querySelector(".food-image");
+const foodItem = document.querySelector(".food-item");
 
 let inputValue;
 
@@ -19,12 +20,22 @@ searchButton.addEventListener("click", () => {
         ui.displayFood(data);
       } else {
         // Display message: "No food found, please try it again."
-        console.log("zero");
+        ui.showAlert("No food found, please try it again.");
       }
     });
   } else {
     // Display message: "Please enter food you want to search for"
-    console.log("empty");
     ui.showAlert("Please enter food you want to search for");
   }
 });
+
+// MODAL
+// const myModal = new bootstrap.Modal(".modal");
+
+// document.querySelector(".test-button").addEventListener("click", () => {
+//   myModal.show();
+// });
+
+// document.getElementById("close-button").addEventListener("click", () => {
+//   myModal.hide();
+// });

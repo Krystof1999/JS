@@ -12,4 +12,13 @@ class Fetch {
     const data = await response.json();
     return data;
   }
+
+  async getDetailOfTheFood(id) {
+    const response = await fetch(
+      `https://api.spoonacular.com/recipes/${id}/information?apiKey=2f86b8baff844a239c68b13f9fda410b&includeNutrition=false`
+    );
+
+    const data = await response.json();
+    return data;
+  }
 }

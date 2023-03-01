@@ -1,6 +1,20 @@
+// Init Fetch
+const httpFetch2 = new Fetch();
+
 class UI {
   constructor() {
     this.foodContent = document.querySelector(".food-content");
+
+    this.foodContent.addEventListener("click", (e) => {
+      const foodItem = e.target.closest(".food-item");
+      if (foodItem) {
+        console.log("cllic", foodItem.id);
+        const id = foodItem.id;
+        httpFetch2.getDetailOfTheFood(id).then((data) => {
+          console.log(data);
+        });
+      }
+    });
   }
 
   // Create element
@@ -9,8 +23,8 @@ class UI {
 
     data.results.forEach((result) => {
       output += `
-    <div class="food-item">
-          <a href="index2.html">
+    <div class="food-item" id="${result.id}">
+          <a href="#">
             <img
               src="${result.image}"
               class="food-image"
@@ -30,6 +44,7 @@ class UI {
 
   showAlert(message) {
     const div = document.createElement("div");
+    this.clearAlert();
     div.className = "alert-div";
 
     div.innerHTML = `
@@ -70,6 +85,9 @@ class UI {
 
   clearAlert() {
     const alert = document.querySelector(".alert-div");
-    alert.remove();
+
+    if (alert) {
+      alert.remove();
+    }
   }
 }
