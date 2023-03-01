@@ -9,8 +9,7 @@ const foodImage = document.querySelector(".food-image");
 
 let inputValue;
 
-searchButton.addEventListener("click", (e) => {
-  console.log("ds");
+searchButton.addEventListener("click", () => {
   inputValue = searchField.value;
 
   if (inputValue !== "") {
@@ -26,5 +25,6 @@ searchButton.addEventListener("click", (e) => {
   } else {
     // Display message: "Please enter food you want to search for"
     console.log("empty");
+    ui.showAlert("Please enter food you want to search for");
   }
 });
