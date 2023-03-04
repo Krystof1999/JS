@@ -1,23 +1,15 @@
 // Init Fetch
 const httpFetch2 = new Fetch();
+// Modal
+const myModal = new bootstrap.Modal(".modal");
 
 class UI {
   constructor() {
     this.foodContent = document.querySelector(".food-content");
-
-    this.foodContent.addEventListener("click", (e) => {
-      const foodItem = e.target.closest(".food-item");
-      if (foodItem) {
-        console.log("cllic", foodItem.id);
-        const id = foodItem.id;
-        httpFetch2.getDetailOfTheFood(id).then((data) => {
-          console.log(data);
-        });
-      }
-    });
+    this.displayDetailOfTheFood();
   }
 
-  // Create element
+  // Display food by entered query
   displayFood(data) {
     let output = "";
 
@@ -36,6 +28,41 @@ class UI {
     `;
     });
     this.foodContent.innerHTML = output;
+  }
+
+  // Display detail of the selected food
+  displayDetailOfTheFood() {
+    this.foodContent.addEventListener("click", (e) => {
+      const foodItem = e.target.closest(".food-item");
+      if (foodItem) {
+        console.log("cllic", foodItem.id);
+        const id = foodItem.id;
+        httpFetch2.getDetailOfTheFood(id).then((data) => {
+          console.log(data);
+          const modalTitle = document.querySelector(".modal-title");
+          const modalBody = document.querySelector(".modal-body");
+          //set modal title
+          modalTitle.innerHTML = data.title;
+          //set modal body
+          modalBody.innerHTML = "";
+          data.extendedIngredients.forEach((ingredient) => {
+            modalBody.innerHTML += `
+         <li>${ingredient.original}</li>
+          `;
+          });
+
+          const modalBodyBottom = document.querySelector(".modal-body-bottom");
+          modalBodyBottom.innerHTML = "";
+          data.analyzedInstructions[0].steps.forEach((step, idx) => {
+            modalBodyBottom.innerHTML += `
+                <ol>Step ${idx + 1}: ${step.step}</ol>
+              `;
+          });
+
+          myModal.show();
+        });
+      }
+    });
   }
 
   insertAfter(newNode, existingNode) {
@@ -60,7 +87,7 @@ class UI {
       </symbol>
     </svg>
 
-    <div class="alert alert-warning d-flex align-items-center" role="alert">
+    <div class="alert alert-warning d-flex align-items-center mt-4" role="alert">
       <svg
         class="bi flex-shrink-0 me-2"
         width="24"
@@ -74,7 +101,8 @@ class UI {
     </div>
     `;
 
-    const afterElement = document.querySelector(".food-content");
+    // const afterElement = document.querySelector(".food-content");
+    const afterElement = document.getElementById("top-div");
     this.insertAfter(div, afterElement);
 
     // Timeout after 3 sec
@@ -91,3 +119,8 @@ class UI {
     }
   }
 }
+
+// Close modal
+document.getElementById("close-button").addEventListener("click", () => {
+  myModal.hide();
+});

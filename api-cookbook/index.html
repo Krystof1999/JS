@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <h1 class="d-flex justify-content-center">Cookbook</h1>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" id="top-div">
         <form
           class="d-inline-flex mt-4 align-items-center"
           onsubmit="event.preventDefault()"
@@ -37,28 +37,20 @@
       <div class="food-content"></div>
     </div>
 
-    <button class="test-button">BTN</button>
-
-    <div class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
+    <div class="modal bd-example-modal-lg" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Food detail</h5>
           </div>
           <div class="modal-body">
-            <ul>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-              <li>a</li>
-            </ul>
+            <ul></ul>
+          </div>
+          <div class="container">
+            <h4>Instructions for preparation</h4>
+            <div class="modal-body-bottom">
+              <ul></ul>
+            </div>
           </div>
           <div class="modal-footer">
             <button

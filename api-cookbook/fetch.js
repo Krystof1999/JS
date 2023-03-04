@@ -1,7 +1,7 @@
 class Fetch {
   constructor() {
     this.authentication = "2f86b8baff844a239c68b13f9fda410b";
-    this.numberOfFoods = 20;
+    this.numberOfFoods = 300;
   }
 
   async getFood(inputValue) {
